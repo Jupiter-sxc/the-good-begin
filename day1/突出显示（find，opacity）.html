@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>突出显示</title>
+	<style>
+		body{
+			background-color: #eee;
+		}
+		div {
+			width: 700px;
+			height: 420px;
+			background-color: #fff;
+			margin: 50 auto;
+			text-align: center;
+		}
+		img{
+			float: left;
+			width: 300px;
+			height: 200px;
+			margin: 10px;
+		}
+	</style>
+	<script src="jquery-1.11.1.min.js"></script>
+	<script>
+		$(function () {
+			// body...
+			$('img').mouseenter(function() {
+				/* Act on the event */
+				$(this).css('opacity', '1').siblings('img').css('opacity', '.4');
+			});
+			$('div').mouseleave(function() {
+				/* Act on the event */
+				$(this).children('img').css('opacity', '1');
+			});
+		})
+	</script>
+</head>
+<body>
+	<div>
+		<img src="cln1.jpg" alt="">
+		<img src="cln2.jpg" alt="">
+		<img src="cln3.jpg" alt="">
+		<img src="cln4.jpg" alt="">
+	</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手风琴案例</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		.wrap {
+			width: 300px;
+			margin: 50px auto;
+		}
+		.wrap .meanGroup {
+			border: 1px solid pink;
+			background-color: #e45643;
+		}
+		.wrap .meanGroup .Title {
+			display: block;
+			height: 30px;
+			line-height: 30px;
+			font-size: 14px;
+			color: #555;
+		}
+		.wrap .meanGroup div {
+			height: 600px;
+			display: none;
+			background-color: yellow;
+		}
+	</style>
+	<script src="jquery-1.11.1.min.js"></script>
+	<script>
+		$(function () {
+			// body...
+			$('li').click(function() {
+				/* Act on the event */
+				$(this).children('div').css('display', 'block');
+			});
+			$('li').mouseleave(function() {
+				/* Act on the event */
+				$(this).children('div').css('display', 'none');
+			});
+		})
+		// $(function(){
+		// 	$('.Title').click(function() {
+		// 		/* Act on the event */
+		// 		$(this).next('div').show();
+		// 		$(this).parent('li').siblings('li').children('div').hide();
+		// 	});
+		// })
+	</script>
+</head>
+<body>
+	<ul class="wrap">
+		<li class="meanGroup">
+			<span class="Title">one</span>
+			<div>hello</div>
+		</li>
+		<li class="meanGroup">
+			<span class="Title">two</span>
+			<div>hi</div>
+		</li>
+		<li class="meanGroup">
+			<span class="Title">three</span>
+			<div>great</div>
+		</li>
+		<li class="meanGroup">
+			<span class="title">four</span>
+			<div>wonderful</div>
+		</li>
+	</ul>
+</body>
+</html>

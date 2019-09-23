@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>隔行变色</title>
+	<script src="jquery-1.11.1.min.js"></script>
+	<style>
+		/* li:hover {
+			background-color: #e45632;
+		} */
+	</style>
+	<script>
+		$(function(){
+			$('li:odd').css("background-color","yellow");
+			$('li:even').css("background-color","green");
+			var bg;
+			$('li').mouseenter(function() {
+				/* Act on the event */
+				bg=$(this).css('background-color');
+				$(this).css('background-color','gray');
+			});
+			$('li').mouseleave(function(){
+				$(this).css('background-color',bg);
+			});
+		})
+	</script>
+</head>
+<body>
+	<ul>
+		<li>隔行变色，索引值为0</li>
+		<li>隔行变色，索引值为1</li>
+		<li>隔行变色，索引值为2</li>
+		<li>隔行变色，索引值为3</li>
+		<li>隔行变色，索引值为4</li>
+		<li>隔行变色，索引值为5</li>
+		<li>隔行变色，索引值为6</li>
+		<li>隔行变色，索引值为7</li>
+	
+	</ul>
+</body>
+</html>
